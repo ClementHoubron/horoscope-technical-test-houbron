@@ -19,7 +19,7 @@ A simple Express app that returns the zodiac sign based on a provided birthdate.
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/horoscope-express-app.git
+   git clone https://github.com/ClementHoubron/horoscope-technical-test-houbron.git
    cd horoscope-express-app
 2. Install dependencies:
 
@@ -168,5 +168,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: yourdockerhubusername/horoscope-express-app:latest
+          tags: yourdockerhubusername/horoscope-technical-test-houbron:latest
 ```
