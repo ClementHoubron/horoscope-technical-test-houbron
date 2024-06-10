@@ -98,7 +98,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
  *                   type: string
  *                   example: Error processing the birthdate
  */
-
 app.get('/horoscope',
   [
     check('birthdate').isISO8601().withMessage('Invalid birthdate format')
@@ -131,8 +130,6 @@ app.get('/horoscope',
     }
   });
 
-app.listen(port, () => {
   logger.info(`Server is running on port ${port}`);
 });
 
-module.exports = app;
