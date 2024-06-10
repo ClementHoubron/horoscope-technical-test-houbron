@@ -1,7 +1,12 @@
 const request = require('supertest');
-const app = require('./app'); // Adjust the path as necessary
+const app = require('./app');
+const logger = require('./logger');
 
 describe('GET /horoscope', () => {
+  beforeAll(() => {
+    logger.transports.forEach((t) => (t.silent = true)); // Disable logging during tests
+  });
+
   it('should return the correct zodiac sign for a valid birthdate', async () => {
     const res = await request(app)
       .get('/horoscope')
@@ -9,7 +14,7 @@ describe('GET /horoscope', () => {
     
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty('zodiacSign');
-    expect(res.body.zodiacSign).toBe('Leo'); // Adjust the expected zodiac sign based on the actual implementation
+    expect(res.body.zodiacSign).toBe('Leo'); // Adjust based on your implementation
   });
 
   it('should return an error for an invalid birthdate format', async () => {
