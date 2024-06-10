@@ -168,5 +168,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: yourdockerhubusername/horoscope-technical-test-houbron:latest
+          tags: clementhoubron/horoscope-technical-test-houbron:latest
 ```
