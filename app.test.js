@@ -1,10 +1,9 @@
 const request = require('supertest');
-const app = require('./app');
-const logger = require('./logger');
+const { app, server } = require('./app');
 
 describe('GET /horoscope', () => {
-  beforeAll(() => {
-    logger.transports.forEach((t) => (t.silent = true)); // Disable logging during tests
+  afterAll(() => {
+    server.close(); // Ensure the server is closed after all tests
   });
 
   it('should return the correct zodiac sign for a valid birthdate', async () => {
