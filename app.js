@@ -18,9 +18,8 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Horoscope Express API',
+      title: 'Horoscope Technical Test Houbron',
       version: '1.0.0',
-      description: 'A simple Express API to get zodiac sign based on birthdate',
     },
     servers: [
       {
@@ -130,6 +129,8 @@ app.get('/horoscope',
     }
   });
 
+const server = app.listen(port, () => {
   logger.info(`Server is running on port ${port}`);
 });
 
+module.exports = { app, server };
